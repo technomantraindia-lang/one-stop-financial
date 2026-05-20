@@ -1,0 +1,743 @@
+﻿<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>One Stop Financial Solution | Expert Wealth Management</title>
+<meta name="description" content="Expert-led wealth management strategies tailored to your life goals. Secure your future with institutional-grade precision and personalized financial advisory."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    screens: {
+      sm: "520px",
+      md: "768px",
+      lg: "1024px"
+    },
+    extend: {
+      maxWidth: {
+        "7xl": "1400px"
+      },
+      colors: {
+        primary: "#000613",
+        secondary: "#0059bb",
+        "accent-gold": "#d36900",
+        "accent-bronze": "#723600",
+        surface: "#f8f9fa",
+        "surface-dim": "#d9dadb",
+        "surface-container": "#edeeef",
+        "surface-container-low": "#f3f4f5",
+        "surface-container-high": "#e7e8e9",
+        "on-surface": "#191c1d",
+        "on-surface-variant": "#43474e",
+        "outline-variant": "#c4c6cf"
+      },
+      borderRadius: {
+        DEFAULT: "0.125rem",
+        lg: "0.25rem",
+        xl: "0.5rem",
+        full: "0.75rem"
+      },
+      spacing: {
+        lg: "48px",
+        gutter: "20px",
+        xl: "80px",
+        md: "24px",
+        sm: "12px"
+      },
+      fontFamily: {
+        display: ["Playfair Display", "serif"],
+        sans: ["Inter", "sans-serif"]
+      }
+    }
+  }
+};
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+.material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .glass-premium {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .card-shadow {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .card-shadow:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.07);
+        }
+        .hero-mask {
+            background: linear-gradient(to right, rgba(0, 6, 19, 0.95) 0%, rgba(0, 6, 19, 0.6) 50%, rgba(0, 6, 19, 0.2) 100%);
+        }
+        .tracking-tighter-text {
+            letter-spacing: -0.04em;
+        }
+        .section-vertical-spacing {
+            padding-top: clamp(56px, 7vw, 88px);
+            padding-bottom: clamp(56px, 7vw, 88px);
+        }
+        /* Video Modal */
+        .vmodal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+        }
+        .vmodal-backdrop.active {
+            display: flex;
+        }
+        .vmodal-box {
+            position: relative;
+            width: 90%;
+            max-width: 400px; /* Narrower for portrait */
+        }
+        .vmodal-box video {
+            width: 100%;
+            aspect-ratio: 9 / 16; /* Portrait aspect ratio */
+            object-fit: contain;
+            background: #000;
+            border-radius: 8px;
+        }
+        .vmodal-close {
+            position: absolute;
+            top: -44px;
+            right: 0;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        /* WhatsApp Button */
+        #wa-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #wa-btn:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+        }
+        #wa-btn svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+        #wa-btn .wa-tooltip {
+            position: absolute;
+            right: 66px;
+            background: #fff;
+            color: #222;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        #wa-btn:hover .wa-tooltip {
+            opacity: 1;
+        }
+
+
+</style>
+</head>
+<body class="bg-surface text-on-surface font-sans selection:bg-accent-gold/20">
+<!-- Header / TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-primary/95 backdrop-blur-xl border-b border-white/10 transition-all duration-500">
+<div class="max-w-7xl mx-auto px-gutter flex justify-between items-center h-20 md:h-[88px]">
+<div class="font-display text-xl md:text-2xl font-bold text-white tracking-tighter flex items-center">
+            <img src="logo2.png" alt="One Stop Financial Solution Logo" class="h-14 md:h-20 w-auto object-contain py-2">
+        </div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-white font-semibold text-[13px] uppercase tracking-widest border-b-2 border-accent-gold pb-0.5" href="#home">Home</a>
+<a class="text-white/80 font-medium text-[13px] uppercase tracking-widest hover:text-accent-gold transition-colors" href="#about">About</a>
+<a class="text-white/80 font-medium text-[13px] uppercase tracking-widest hover:text-accent-gold transition-colors" href="#services">Services</a>
+<a class="text-white/80 font-medium text-[13px] uppercase tracking-widest hover:text-accent-gold transition-colors" href="#contact">Contact</a>
+</nav>
+<button class="bg-accent-gold text-white px-6 py-3 rounded-none font-bold text-[11px] uppercase tracking-[0.2em] hover:brightness-110 transition-all duration-300" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Consult Experts
+        </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section id="home" class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-primary">
+<div class="absolute inset-0 z-0">
+<img alt="Financial advisor presenting data to clients in a modern office" class="w-full h-full object-cover scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA8HnmyxyIJjif_hiO3W1eRCZwJ0nbxvEuPWhUMlJlqvG6hkpxtrLvZg-2xB-wXGWRSjv_cu2WkZKIDXRFFDQG00624BLthlKuTztDvGAIPeTBTGveJgc9trxFofK1fsNFofoPTYDEZvxlSGFn-w6pNLaHK0RUVQcJrTYsmkSv4i9Z2gQ2HFR45mJv52HO-8mv46LRNnPTxO3ydwse7qHUOZaNn2y02LcHJDQSe4BcdOJVvRDLWK6xla5bCWYvBTfklL29FGcIevs"/>
+<div class="absolute inset-0 hero-mask"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-gutter w-full py-xl">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1 glass-premium rounded-full mb-6 border border-white/20">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-gold animate-pulse"></span>
+<span class="text-white text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em]">Your One-Stop Financial Solution</span>
+</div>
+<h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.08] tracking-tighter-text">
+                    Your One-Stop Financial Solution for Investments, Insurance <span class="italic font-normal text-accent-gold">&amp; Wealth Growth</span>
+</h1>
+<p class="text-white/70 text-base md:text-lg font-light mb-8 max-w-2xl leading-relaxed">
+                    Expert-led wealth management strategies tailored to your life goals. Secure your future with our institutional-grade precision and personalized financial advisory.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-accent-gold text-white px-8 py-4 rounded-none font-bold text-[11px] uppercase tracking-[0.2em] hover:brightness-110 transition-all shadow-2xl shadow-accent-gold/10" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                        Get Free Consultation
+                    </button>
+<button class="bg-white/5 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-none font-bold text-[11px] uppercase tracking-[0.2em] hover:bg-white/10 transition-all" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+                        Start Growing Today
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Metrics Section -->
+<section class="bg-primary border-y border-white/5">
+<div class="max-w-7xl mx-auto px-gutter py-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col">
+<span class="font-display text-3xl md:text-4xl text-accent-gold mb-1">12+</span>
+<span class="text-[10px] text-white/40 uppercase tracking-[0.25em] font-bold">Years Experience</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display text-3xl md:text-4xl text-accent-gold mb-1">Trusted</span>
+<span class="text-[10px] text-white/40 uppercase tracking-[0.25em] font-bold">Guidance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display text-3xl md:text-4xl text-accent-gold mb-1">Personalized</span>
+<span class="text-[10px] text-white/40 uppercase tracking-[0.25em] font-bold">Strategy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display text-3xl md:text-4xl text-accent-gold mb-1">Wealth</span>
+<span class="text-[10px] text-white/40 uppercase tracking-[0.25em] font-bold">Creation</span>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="section-vertical-spacing max-w-7xl mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<div class="lg:col-span-5 relative">
+<div class="relative overflow-hidden group">
+<img alt="A diverse team of financial analysts collaborating in a modern office" class="w-full object-cover aspect-[4/5] scale-100 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg3T8tzYFWmPJzMYD-B0ko9S64HItqhs--y9Dx6hdiuoY5Ee23DoxadKyukFNxgdTWnSuLOulMudiXIQimtb6A5oDMC53iVovLxclDiFEqmejV8N_wvHEWuUYJEfl1l61syFfefXgqvTvWFpgO85bg4DZd9XClsN4GTdW8w5ctknLcJGPNXQOjWXe2oXObJ27AEiwJlpMyhPZaTXDOCgGq5b3yYblTpGrvvYE-_RdMWwbEVeGOdpiFYpIdKo5ODkB-K26ZX10L4-8"/>
+<div class="absolute inset-0 border-[12px] border-white/10 pointer-events-none"></div>
+</div>
+</div>
+<div class="lg:col-span-7 lg:pl-8">
+<span class="text-[11px] text-accent-gold font-bold tracking-[0.35em] uppercase mb-4 block">About Us</span>
+<h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-primary mb-6 leading-[1.12] tracking-tighter-text">Institutional Expertise for Individual Success</h2>
+<p class="text-base text-on-surface-variant mb-8 font-light leading-relaxed">
+                    At One Stop Financial Solution, we believe that wealth creation is a science and an art. Our firm bridges the gap between traditional reliability and modern agility, providing a holistic platform for all your financial needs. From Demat services to global insurance portfolios, we provide the clarity required to navigate complex markets.
+                </p>
+<div class="bg-surface-container-low p-7 border-l-2 border-accent-gold relative">
+<span class="absolute -top-3 -left-3 text-5xl text-accent-gold/10 font-display">"</span>
+<h3 class="font-display text-xl text-primary mb-3 italic">Same Investmentâ€¦ Better Returns.</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        Our proprietary optimization strategies ensure your existing capital works harder for you through precise asset allocation.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Investment & Demat Services Section -->
+<section id="services" class="section-vertical-spacing bg-white">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-2xl">
+<span class="text-[11px] text-accent-gold font-bold tracking-[0.35em] uppercase mb-3 block">Our Service Suites</span>
+<h2 class="font-display text-3xl md:text-5xl text-primary tracking-tighter-text">Comprehensive Service Suites</h2>
+</div>
+<p class="text-sm text-on-surface-variant max-w-sm font-light mb-1">One ecosystem, infinite possibilities. Explore our specialized divisions designed for every stage of your financial journey.</p>
+</div>
+<!-- Investment & Demat Services Header -->
+<div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-3">
+<div>
+<h3 class="font-display text-2xl text-primary">Investment &amp; Demat Services</h3>
+<p class="text-sm text-on-surface-variant font-light mt-1">Precision trading and long-term portfolio growth.</p>
+</div>
+<span class="bg-primary text-white px-5 py-2.5 font-bold text-[10px] uppercase tracking-[0.25em]">NSE &amp; BSE Certified</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+<!-- Cards -->
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">account_balance_wallet</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Demat Account Opening</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Seamless trading account setups for high-frequency assets.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">monitoring</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Equity Investment</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Strategic stock selection with institutional-grade research.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">pie_chart</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Mutual Fund Services</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Diversified portfolios curated by our master strategists.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">timer</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Short-Term Investment</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Quick-yield instruments for near-term financial goals.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">calendar_month</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Long-Term Investment</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Compounding wealth through disciplined, patient strategies.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">shopping_cart</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Commodity Trading</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Gold, silver, crude â€” diversify with real asset exposure.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">rocket_launch</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">IPO Guidance</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Early access and expert analysis on upcoming IPOs.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">show_chart</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Stock Options</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Leverage market movements with precision options strategies.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">swap_vert</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Options Trading</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Advanced derivatives trading for hedging and income generation.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">currency_exchange</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Forex Trading</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Global currency markets with real-time analysis and execution.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">precision_manufacturing</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Algo Trading</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Automated, algorithm-driven trading for consistent returns.</p>
+</div>
+<div class="p-6 border border-outline-variant/20 card-shadow group">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center mb-5 group-hover:bg-accent-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-xl">school</span>
+</div>
+<h4 class="font-display text-lg mb-2 text-primary">Free Advisory &amp; Training</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Complimentary market education and expert advisory sessions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Insurance Section -->
+<section class="section-vertical-spacing bg-primary text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 100 L100 0 L100 100 Z" fill="white" fill-opacity="0.1"></path>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto px-gutter relative z-10">
+<div class="flex flex-col lg:flex-row justify-between items-end mb-12 gap-8">
+<div class="max-w-3xl">
+<span class="text-accent-gold font-bold text-[11px] uppercase tracking-[0.35em] block mb-4">Insurance Solutions</span>
+<h2 class="font-display text-3xl md:text-5xl mb-5 leading-tight tracking-tighter-text">All Insurance Services</h2>
+<p class="text-white/50 text-base font-light leading-relaxed max-w-2xl">Securing your assets and your legacy. Our comprehensive insurance suite protects what matters most.</p>
+</div>
+<div class="glass-premium p-6 border border-white/10 flex items-center gap-5">
+<div class="w-12 h-12 bg-accent-gold flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">handshake</span>
+</div>
+<div>
+<p class="text-[10px] text-white/40 font-bold uppercase tracking-[0.25em] mb-0.5">Strategic Alliance</p>
+<p class="font-display text-lg text-white">Offline Partner of Policybazaar</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="p-7 border border-white/10 hover:bg-white/5 transition-all duration-500">
+<span class="material-symbols-outlined text-accent-gold text-3xl mb-5">medical_services</span>
+<h4 class="font-display text-xl mb-2">Health</h4>
+<p class="text-white/40 text-[13px] font-light leading-relaxed">Comprehensive medical covers for global protection.</p>
+</div>
+<div class="p-7 border border-white/10 hover:bg-white/5 transition-all duration-500">
+<span class="material-symbols-outlined text-accent-gold text-3xl mb-5">shield</span>
+<h4 class="font-display text-xl mb-2">Term</h4>
+<p class="text-white/40 text-[13px] font-light leading-relaxed">Legacy security with tailored premium structures.</p>
+</div>
+<div class="p-7 border border-white/10 hover:bg-white/5 transition-all duration-500">
+<span class="material-symbols-outlined text-accent-gold text-3xl mb-5">directions_car</span>
+<h4 class="font-display text-xl mb-2">Car</h4>
+<p class="text-white/40 text-[13px] font-light leading-relaxed">Asset protection with rapid claim settlements.</p>
+</div>
+<div class="p-7 border border-white/10 hover:bg-white/5 transition-all duration-500">
+<span class="material-symbols-outlined text-accent-gold text-3xl mb-5">flight</span>
+<h4 class="font-display text-xl mb-2">Travel</h4>
+<p class="text-white/40 text-[13px] font-light leading-relaxed">Worldwide coverage for worry-free journeys.</p>
+</div>
+<div class="p-7 border border-white/10 hover:bg-white/5 transition-all duration-500">
+<span class="material-symbols-outlined text-accent-gold text-3xl mb-5">home</span>
+<h4 class="font-display text-xl mb-2">Home</h4>
+<p class="text-white/40 text-[13px] font-light leading-relaxed">Complete property and contents protection.</p>
+</div>
+<div class="p-7 border border-white/10 hover:bg-white/5 transition-all duration-500">
+<span class="material-symbols-outlined text-accent-gold text-3xl mb-5">family_restroom</span>
+<h4 class="font-display text-xl mb-2">Life</h4>
+<p class="text-white/40 text-[13px] font-light leading-relaxed">Secure your family's future with comprehensive life coverage.</p>
+</div>
+<div class="p-7 border border-white/10 hover:bg-white/5 transition-all duration-500">
+<span class="material-symbols-outlined text-accent-gold text-3xl mb-5">business_center</span>
+<h4 class="font-display text-xl mb-2">General</h4>
+<p class="text-white/40 text-[13px] font-light leading-relaxed">Enterprise risk management and liability coverage.</p>
+</div>
+<div class="p-7 border border-white/10 hover:bg-white/5 transition-all duration-500">
+<span class="material-symbols-outlined text-accent-gold text-3xl mb-5">groups</span>
+<h4 class="font-display text-xl mb-2">Workmen's Comp</h4>
+<p class="text-white/40 text-[13px] font-light leading-relaxed">Employee protection and workplace liability solutions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us Section -->
+<section class="section-vertical-spacing bg-white">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center mb-14">
+<span class="text-[11px] text-accent-gold font-bold tracking-[0.35em] uppercase mb-4 block">Why Choose Us</span>
+<h2 class="font-display text-3xl md:text-5xl text-primary tracking-tighter-text">The Benchmark of Financial Trust</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container mx-auto mb-5 rounded-none border border-transparent group-hover:border-accent-gold flex items-center justify-center transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:text-accent-gold transition-colors">history</span>
+</div>
+<h5 class="font-display text-xl mb-1.5 text-primary">12+ Years</h5>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-[0.2em]">Unmatched Experience</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container mx-auto mb-5 rounded-none border border-transparent group-hover:border-accent-gold flex items-center justify-center transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:text-accent-gold transition-colors">hub</span>
+</div>
+<h5 class="font-display text-xl mb-1.5 text-primary">One-Stop Solution</h5>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-[0.2em]">Integrated Ecosystem</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container mx-auto mb-5 rounded-none border border-transparent group-hover:border-accent-gold flex items-center justify-center transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:text-accent-gold transition-colors">person_pin</span>
+</div>
+<h5 class="font-display text-xl mb-1.5 text-primary">Personalized Strategies</h5>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-[0.2em]">Customized for You</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container mx-auto mb-5 rounded-none border border-transparent group-hover:border-accent-gold flex items-center justify-center transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:text-accent-gold transition-colors">visibility</span>
+</div>
+<h5 class="font-display text-xl mb-1.5 text-primary">Transparent Guidance</h5>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-[0.2em]">No Hidden Agendas</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container mx-auto mb-5 rounded-none border border-transparent group-hover:border-accent-gold flex items-center justify-center transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:text-accent-gold transition-colors">diamond</span>
+</div>
+<h5 class="font-display text-xl mb-1.5 text-primary">Wealth Creation</h5>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-[0.2em]">Focus on Growth</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Videos Section -->
+<section class="section-vertical-spacing bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+<div>
+<span class="text-[11px] text-accent-gold font-bold tracking-[0.35em] uppercase mb-4 block">Expert Insights</span>
+<h2 class="font-display text-3xl md:text-5xl text-primary tracking-tighter-text">Watch How We Help</h2>
+<p class="text-sm text-on-surface-variant font-light mt-3">Gain insights from our experts through video tutorials and testimonials.</p>
+</div>
+<button class="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.25em] text-primary group py-2 border-b border-primary/10">
+                    View More Videos 
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+<!-- Video Card 1 -->
+<div class="bg-white border border-outline-variant/10 group card-shadow cursor-pointer" onclick="openModal('Understanding Mutual Funds.mp4')">
+<div class="relative aspect-video bg-primary overflow-hidden">
+<img src="thumb_mutual_funds.png" alt="Understanding Mutual Funds thumbnail" class="w-full h-full object-cover opacity-60"/>
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/30 to-primary/80 opacity-60"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:scale-110 hover:bg-accent-gold transition-all duration-300">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="p-7">
+<h4 class="font-display text-xl text-primary mb-3 leading-tight">Understanding Mutual Funds</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Learn the fundamentals of mutual fund investing and how it can help diversify your portfolio. Discover strategies to optimize your returns while managing risk effectively.</p>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="bg-white border border-outline-variant/10 group card-shadow cursor-pointer" onclick="openModal('Risk Management in 2024.mp4')">
+<div class="relative aspect-video bg-primary overflow-hidden">
+<img src="thumb_risk_management.png" alt="Risk Management in 2024 thumbnail" class="w-full h-full object-cover opacity-60"/>
+<div class="absolute inset-0 bg-gradient-to-br from-accent-gold/30 to-primary/80 opacity-60"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:scale-110 hover:bg-accent-gold transition-all duration-300">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="p-7">
+<h4 class="font-display text-xl text-primary mb-3 leading-tight">Risk Management in 2024</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Explore essential techniques to protect and grow your investments in today's market. Learn how to balance risk and opportunity with smart financial strategies.</p>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="bg-white border border-outline-variant/10 group card-shadow cursor-pointer" onclick="openModal('Why Insurance Matters.mp4')">
+<div class="relative aspect-video bg-primary overflow-hidden">
+<img src="thumb_insurance.png" alt="Why Insurance Matters thumbnail" class="w-full h-full object-cover opacity-60"/>
+<div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent-bronze/80 opacity-60"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:scale-110 hover:bg-accent-gold transition-all duration-300">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="p-7">
+<h4 class="font-display text-xl text-primary mb-3 leading-tight">Why Insurance Matters</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed font-light">Understand the critical role insurance plays in securing your financial future. Learn how to choose the right policies to protect your assets and family.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact/CTA Section -->
+<section id="contact" class="relative bg-primary overflow-hidden section-vertical-spacing">
+<div class="absolute inset-0 opacity-10">
+<img alt="Map of Gurgaon financial district office location" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSQ4h3EuTPwYb1R9AqVGCALDlcIEK2M6hKHPVGxZrqSSKlAitZGHyFgBYJrNZoY3tDSKbO_uYiJYUFNE3cnoXgHhGVQbLIDsGfEr422wD0_ZzJ8C1-be9VtB9BmvYip6VljXJQPJzYVWBi3cPHJdK7stZiE2U-7LndAW6L7mLXtE-CkLU9W3ID_Ns_DUbMvTHOpvPZo6TkA13UTwLZSaswaTPFJPzGm1u89Vc88B9c48hFKmWCa1NLfNUjcIzdFurZeVKB7odq_qs"/>
+</div>
+<div class="max-w-7xl mx-auto px-gutter relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+<div>
+<h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-[1.1] tracking-tighter-text">Ready to Grow <br/>Your <span class="italic font-normal text-accent-gold">Wealth?</span></h2>
+<p class="text-white/50 text-base md:text-lg font-light mb-10 max-w-xl leading-relaxed">Book a private consultation with our senior advisors and let's craft your journey to financial independence.</p>
+<div class="space-y-7">
+<div class="flex items-center gap-7">
+<div class="w-px h-10 bg-accent-gold"></div>
+<div>
+<p class="text-[10px] text-white/30 font-bold uppercase tracking-[0.25em] mb-1">Phone</p>
+<p class="font-display text-xl text-white">+91 8905183232</p>
+</div>
+</div>
+<div class="flex items-center gap-7">
+<div class="w-px h-10 bg-accent-gold"></div>
+<div>
+<p class="text-[10px] text-white/30 font-bold uppercase tracking-[0.25em] mb-1">Email</p>
+<p class="font-display text-xl text-white">bhavin4wealth@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center gap-7">
+<div class="w-px h-10 bg-accent-gold"></div>
+<div>
+<p class="text-[10px] text-white/30 font-bold uppercase tracking-[0.25em] mb-1">Head Office</p>
+<p class="font-display text-xl text-white">Manjalpur, Vadodara</p>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-premium p-8 md:p-10 border border-white/10">
+<h3 class="font-display text-2xl text-white mb-7">Get Free Consultation</h3>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-white/50 text-[10px] font-bold uppercase tracking-[0.25em]">Full Name</label>
+<input class="w-full bg-white/5 border-0 border-b border-white/20 text-white focus:border-accent-gold focus:ring-0 px-0 py-3 text-sm font-light transition-all" placeholder="Enter your name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-white/50 text-[10px] font-bold uppercase tracking-[0.25em]">Email Address</label>
+<input class="w-full bg-white/5 border-0 border-b border-white/20 text-white focus:border-accent-gold focus:ring-0 px-0 py-3 text-sm font-light transition-all" placeholder="Email@domain.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-white/50 text-[10px] font-bold uppercase tracking-[0.25em]">Service of Interest</label>
+<select class="w-full bg-transparent border-0 border-b border-white/20 text-white focus:border-accent-gold focus:ring-0 px-0 py-3 text-sm font-light appearance-none transition-all">
+<option class="bg-primary">Investment & Demat Services</option>
+<option class="bg-primary">Mutual Fund Services</option>
+<option class="bg-primary">Insurance Planning</option>
+<option class="bg-primary">Commodity Trading</option>
+<option class="bg-primary">IPO Guidance</option>
+</select>
+</div>
+<button class="w-full bg-accent-gold text-white py-4 font-bold text-[11px] uppercase tracking-[0.3em] hover:brightness-110 transition-all mt-6">
+                            Get Free Consultation
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white w-full section-vertical-spacing border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
+<div class="lg:col-span-1">
+<div class="font-display text-2xl font-bold text-primary mb-6 tracking-tighter flex items-center">
+                <img src="logo2.png" alt="One Stop Financial Solution Logo" class="h-16 md:h-24 w-auto object-contain">
+            </div>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed mb-6 max-w-sm">
+                All Investment & Insurance Solutions Under One Roof. Expert-led wealth management with 12+ years of trusted experience.
+            </p>
+<div class="flex gap-5">
+<a class="text-primary hover:text-accent-gold transition-colors" href="#home"><span class="material-symbols-outlined text-xl">home</span></a>
+<a class="text-primary hover:text-accent-gold transition-colors" href="#about"><span class="material-symbols-outlined text-xl">info</span></a>
+<a class="text-primary hover:text-accent-gold transition-colors" href="#services"><span class="material-symbols-outlined text-xl">work</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 lg:col-span-2">
+<div>
+<h5 class="text-primary font-bold text-[11px] uppercase tracking-[0.25em] mb-6">Quick Links</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant text-sm font-light hover:text-accent-gold transition-colors" href="#home">Home</a></li>
+<li><a class="text-on-surface-variant text-sm font-light hover:text-accent-gold transition-colors" href="#about">About</a></li>
+<li><a class="text-on-surface-variant text-sm font-light hover:text-accent-gold transition-colors" href="#services">Services</a></li>
+<li><a class="text-on-surface-variant text-sm font-light hover:text-accent-gold transition-colors" href="#contact">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-primary font-bold text-[11px] uppercase tracking-[0.25em] mb-6">Legal</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant text-sm font-light hover:text-accent-gold transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant text-sm font-light hover:text-accent-gold transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-gutter mt-14 pt-8 border-t border-outline-variant/10 text-center md:text-left">
+<p class="text-[10px] text-on-surface-variant/50 font-medium uppercase tracking-[0.2em] leading-loose">
+            Â© 2024 One Stop Financial Solution. All Investment &amp; Insurance Solutions Under One Roof.
+        </p>
+</div>
+</footer>
+
+<!-- Video Modal -->
+<div id="videoModal" class="vmodal-backdrop" onclick="closeModal(event)">
+<div class="vmodal-box">
+<button class="vmodal-close" onclick="closeModal()" aria-label="Close video">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<video id="modalVideo" controls playsinline></video>
+</div>
+</div>
+
+<!-- Floating WhatsApp Button -->
+<a id="wa-btn" href="https://wa.me/918905183232" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M16 0C7.164 0 0 7.163 0 16c0 2.824.738 5.478 2.027 7.784L0 32l8.456-2.007A15.934 15.934 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.29 13.29 0 01-6.789-1.858l-.487-.289-5.02 1.193 1.241-4.89-.318-.502A13.266 13.266 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.28-9.907c-.4-.2-2.365-1.165-2.731-1.298-.366-.133-.632-.2-.898.2-.266.4-1.032 1.298-1.265 1.564-.233.266-.466.3-.866.1-.4-.2-1.688-.623-3.215-1.982-1.188-1.059-1.99-2.367-2.223-2.767-.233-.4-.025-.616.175-.815.18-.179.4-.466.6-.7.2-.233.266-.4.4-.666.133-.267.066-.5-.033-.7-.1-.2-.899-2.165-1.232-2.964-.324-.778-.654-.673-.898-.686l-.765-.013c-.266 0-.7.1-1.066.5-.366.4-1.4 1.366-1.4 3.332 0 1.965 1.432 3.864 1.632 4.13.2.267 2.82 4.302 6.83 6.031.955.412 1.7.658 2.281.842.958.305 1.83.262 2.52.159.769-.114 2.365-.966 2.697-1.9.332-.932.332-1.731.233-1.898-.1-.167-.366-.267-.766-.467z"/>
+</svg>
+<span class="wa-tooltip">Chat with us!</span>
+</a>
+<script>
+// Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.add('shadow-xl', 'shadow-primary/5');
+        } else {
+            header.classList.remove('shadow-xl', 'shadow-primary/5');
+        }
+    });
+
+    // Card interactive states
+    const cards = document.querySelectorAll('.card-shadow');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const icon = card.querySelector('.material-symbols-outlined');
+            if (icon) icon.style.fontVariationSettings = "'FILL' 1";
+        });
+        card.addEventListener('mouseleave', () => {
+            const icon = card.querySelector('.material-symbols-outlined');
+            if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+        });
+    });
+
+    // Video Modal
+    function openModal(src) {
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('modalVideo');
+        video.src = src;
+        modal.classList.add('active');
+        video.play();
+    }
+    function closeModal(e) {
+        if (e && e.target !== e.currentTarget) return;
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('modalVideo');
+        video.pause();
+        video.src = '';
+        modal.classList.remove('active');
+    }
+
+    // Active nav link highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 200;
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('font-semibold', 'border-b-2', 'border-accent-gold');
+            link.classList.add('font-medium');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('font-semibold', 'border-b-2', 'border-accent-gold');
+                link.classList.remove('font-medium');
+            }
+        });
+    });
+</script>
+</body></html>
+

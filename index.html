@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>One Stop Financial Solution | Expert Wealth Management</title>
   <meta name="description" content="Expert-led wealth management strategies tailored to your life goals. Secure your future with institutional-grade precision and personalized financial advisory.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,242 +16,229 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
-      <span class="brand">One Stop Financial Solution</span>
-      <div class="nav-links">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <div class="brand">
+        <span class="brand-title">One Stop Financial</span>
+        <span class="brand-sub">Solution</span>
       </div>
-      <button class="btn-consult" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Consult Experts</button>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">WEALTH MANAGEMENT</a>
+        <a href="#ecosystem" class="nav-link">INVESTMENT ADVISORY</a>
+        <a href="#insurance" class="nav-link">INSURANCE</a>
+      </div>
+      <button class="btn-consult" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">SCHEDULE CONSULT</button>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#home" class="mob-link">Home</a>
-      <a href="#about" class="mob-link">About</a>
-      <a href="#services" class="mob-link">Services</a>
+      <a href="#about" class="mob-link">Wealth Management</a>
+      <a href="#ecosystem" class="mob-link">Investment Advisory</a>
+      <a href="#insurance" class="mob-link">Insurance</a>
       <a href="#contact" class="mob-link">Contact</a>
     </div>
   </nav>
 
   <main>
-
     <!-- HERO -->
-    <section id="home" class="section hero-section reveal">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1 class="hero-heading">Your One-Stop Financial Solution for Investments, Insurance &amp; Wealth Growth</h1>
-          <p class="hero-sub">Expert-led wealth management strategies tailored to your life goals. Secure your future with our institutional-grade precision and personalized financial advisory.</p>
-          <div class="hero-btns">
-            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Free Consultation</button>
-            <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Start Growing Today</button>
-          </div>
-        </div>
-        <div class="hero-img-wrap">
-          <div class="hero-glow"></div>
-          <img class="hero-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA8HnmyxyIJjif_hiO3W1eRCZwJ0nbxvEuPWhUMlJlqvG6hkpxtrLvZg-2xB-wXGWRSjv_cu2WkZKIDXRFFDQG00624BLthlKuTztDvGAIPeTBTGveJgc9trxFofK1fsNFofoPTYDEZvxlSGFn-w6pNLaHK0RUVQcJrTYsmkSv4i9Z2gQ2HFR45mJv52HO-8mv46LRNnPTxO3ydwse7qHUOZaNn2y02LcHJDQSe4BcdOJVvRDLWK6xla5bCWYvBTfklL29FGcIevs" alt="Financial advisor presenting data to clients in a modern office">
-        </div>
+    <section id="home" class="hero-section reveal">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop" alt="Financial Charts on Monitor" class="hero-img-bg">
+        <div class="hero-overlay"></div>
       </div>
-
-      <!-- Trust Bar -->
-      <div class="trust-bar container">
-        <div class="trust-item">
-          <span class="material-symbols-outlined trust-icon">verified</span>
-          <div>
-            <p class="trust-title">12+ Years</p>
-            <p class="trust-sub">Experience</p>
-          </div>
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="material-symbols-outlined">diamond</span> INSTITUTIONAL GRADE WEALTH MANAGEMENT
         </div>
-        <div class="trust-item">
-          <span class="material-symbols-outlined trust-icon">psychology</span>
-          <div>
-            <p class="trust-title">Trusted</p>
-            <p class="trust-sub">Guidance</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="material-symbols-outlined trust-icon">analytics</span>
-          <div>
-            <p class="trust-title">Personalized</p>
-            <p class="trust-sub">Strategy</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="material-symbols-outlined trust-icon">trending_up</span>
-          <div>
-            <p class="trust-title">Wealth</p>
-            <p class="trust-sub">Creation</p>
-          </div>
+        <h1 class="hero-heading">Your One-Stop<br>Financial <span class="accent-text">Solution</span></h1>
+        <p class="hero-sub">Navigating complex markets requires more than just advice; it requires a partnership built on institutional expertise and a commitment to your long-term success.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">GET FREE CONSULTATION</button>
+          <button class="btn-outline" onclick="document.getElementById('ecosystem').scrollIntoView({behavior:'smooth'})">VIEW SERVICES SUITE</button>
         </div>
       </div>
     </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar-wrapper">
+      <div class="container stats-bar">
+        <div class="stat-item">
+          <h3 class="stat-num trust-title">12</h3>
+          <p class="stat-label">YEARS EXPERIENCE</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-num text-accent">Elite</h3>
+          <p class="stat-label">INSTITUTIONAL TEAM</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-num text-accent">Bespoke</h3>
+          <p class="stat-label">PERSONALIZED STRATEGY</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-num text-accent">Growth</h3>
+          <p class="stat-label">WEALTH CREATION</p>
+        </div>
+      </div>
+    </div>
 
     <!-- ABOUT -->
     <section id="about" class="section about-section reveal">
       <div class="container about-grid">
-        <div class="about-img-wrap">
-          <img class="about-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg3T8tzYFWmPJzMYD-B0ko9S64HItqhs--y9Dx6hdiuoY5Ee23DoxadKyukFNxgdTWnSuLOulMudiXIQimtb6A5oDMC53iVovLxclDiFEqmejV8N_wvHEWuUYJEfl1l61syFfefXgqvTvWFpgO85bg4DZd9XClsN4GTdW8w5ctknLcJGPNXQOjWXe2oXObJ27AEiwJlpMyhPZaTXDOCgGq5b3yYblTpGrvvYE-_RdMWwbEVeGOdpiFYpIdKo5ODkB-K26ZX10L4-8" alt="A diverse team of financial analysts collaborating in a modern office">
-        </div>
-        <div class="about-content">
-          <span class="badge">About Us</span>
-          <h2 class="section-heading">Institutional Expertise for Individual Success</h2>
-          <p class="body-text">At One Stop Financial Solution, we believe that wealth creation is a science and an art. Our firm bridges the gap between traditional reliability and modern agility, providing a holistic platform for all your financial needs. From Demat services to global insurance portfolios, we provide the clarity required to navigate complex markets.</p>
-          <div class="highlight-box">
-            <p class="highlight-title">Same Investment… Better Returns.</p>
-            <p class="highlight-body">Our proprietary optimization strategies ensure your existing capital works harder for you through precise asset allocation.</p>
+        <div class="about-images">
+          <img class="img-back" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1974&auto=format&fit=crop" alt="Office Meeting">
+          <div class="img-front">
+             <div class="img-front-inner">
+               <span class="material-symbols-outlined front-icon">workspace_premium</span>
+               <p class="front-text">Top 1%</p>
+               <p class="front-sub">Wealth Advisors</p>
+             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section services-section reveal">
-      <div class="container">
-        <div class="section-intro">
-          <h2 class="section-heading">Comprehensive Service Suites</h2>
-          <p class="body-text">One ecosystem, infinite possibilities. Explore our specialized divisions designed for every stage of your financial journey.</p>
-        </div>
-
-        <!-- Investment Card -->
-        <div class="service-card invest-card">
-          <div class="service-card-header">
-            <div>
-              <h3 class="service-card-title">Investment &amp; Demat Services</h3>
-              <p class="service-card-sub">Precision trading and long-term portfolio growth.</p>
-            </div>
-            <span class="cert-badge">NSE &amp; BSE Certified</span>
-          </div>
-          <div class="service-items-grid">
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">account_balance_wallet</span>
-              <p class="svc-label">Demat Account Opening</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">monitoring</span>
-              <p class="svc-label">Equity Investment</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">pie_chart</span>
-              <p class="svc-label">Mutual Fund Services</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">timer</span>
-              <p class="svc-label">Short-Term Investment</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">calendar_month</span>
-              <p class="svc-label">Long-Term Investment</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">shopping_cart</span>
-              <p class="svc-label">Commodity Trading</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">rocket_launch</span>
-              <p class="svc-label">IPO Guidance</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">show_chart</span>
-              <p class="svc-label">Stock Options</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">swap_vert</span>
-              <p class="svc-label">Options Trading</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">currency_exchange</span>
-              <p class="svc-label">Forex Trading</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">precision_manufacturing</span>
-              <p class="svc-label">Algo Trading</p>
-            </div>
-            <div class="service-item">
-              <span class="material-symbols-outlined svc-icon">school</span>
-              <p class="svc-label">Free Advisory &amp; Training</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Insurance Card -->
-        <div class="service-card insurance-card">
-          <div class="service-card-header">
-            <div>
-              <h3 class="service-card-title white">All Insurance Services</h3>
-              <p class="service-card-sub white-muted">Securing your assets and your legacy.</p>
-            </div>
-            <div class="policybazaar-badge">Offline Partner of Policybazaar</div>
-          </div>
-          <div class="insurance-grid">
-            <div class="ins-item">
-              <span class="material-symbols-outlined ins-icon">medical_services</span>
-              <p class="ins-label">Health</p>
-            </div>
-            <div class="ins-item">
-              <span class="material-symbols-outlined ins-icon">shield</span>
-              <p class="ins-label">Term</p>
-            </div>
-            <div class="ins-item">
-              <span class="material-symbols-outlined ins-icon">directions_car</span>
-              <p class="ins-label">Car</p>
-            </div>
-            <div class="ins-item">
-              <span class="material-symbols-outlined ins-icon">flight</span>
-              <p class="ins-label">Travel</p>
-            </div>
-            <div class="ins-item">
-              <span class="material-symbols-outlined ins-icon">home</span>
-              <p class="ins-label">Home</p>
-            </div>
-            <div class="ins-item">
-              <span class="material-symbols-outlined ins-icon">family_restroom</span>
-              <p class="ins-label">Life</p>
-            </div>
-            <div class="ins-item">
-              <span class="material-symbols-outlined ins-icon">business_center</span>
-              <p class="ins-label">General</p>
-            </div>
-            <div class="ins-item">
-              <span class="material-symbols-outlined ins-icon">groups</span>
-              <p class="ins-label">Workmen's Comp</p>
-            </div>
+        <div class="about-text-content">
+          <p class="section-kicker">ABOUT OUR FIRM</p>
+          <h2 class="section-title">Institutional Expertise for Individual Success</h2>
+          <p class="body-text">At One Stop Financial Solution, we design tailored, institutional-grade investment strategies and comprehensive wealth plans. Our heritage is rooted in data-driven decision making and a deep commitment to every portfolio. We don't just manage assets; we sculpt financial legacies through disciplined risk management and a relentless pursuit of excellence.</p>
+          
+          <div class="highlight-quote">
+            <h4 class="quote-title">Same Investment... Better Returns</h4>
+            <p class="quote-text">"The difference lies in the strategy, asset allocation, and execution of timing. Our proprietary alpha-seeking models ensure your capital works harder for you."</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
-    <section class="section why-section reveal">
+    <!-- WEALTH ECOSYSTEM -->
+    <section id="ecosystem" class="section ecosystem-section reveal bg-light">
       <div class="container">
-        <h2 class="section-heading text-center">The Benchmark of Financial Trust</h2>
-        <div class="why-grid">
-          <div class="why-card">
-            <span class="material-symbols-outlined why-icon">history</span>
-            <p class="why-title">12+ Years</p>
-            <p class="why-sub">Unmatched Experience</p>
+        <div class="section-header-split">
+          <div>
+            <p class="section-kicker">OUR CAPABILITIES</p>
+            <h2 class="section-title">Comprehensive Wealth<br>Ecosystem</h2>
           </div>
-          <div class="why-card">
-            <span class="material-symbols-outlined why-icon">hub</span>
-            <p class="why-title">One-Stop Solution</p>
-            <p class="why-sub">Integrated Ecosystem</p>
+          <p class="header-desc">Integrated solutions designed to mitigate risk and drive yield potential.</p>
+        </div>
+        
+        <div class="ecosystem-grid">
+          <div class="eco-card">
+            <div class="eco-icon"><span class="material-symbols-outlined">account_balance_wallet</span></div>
+            <h4 class="eco-title">Demat</h4>
+            <p class="eco-desc">Zero-brokerage trading accounts with high-frequency insights.</p>
           </div>
-          <div class="why-card">
-            <span class="material-symbols-outlined why-icon">person_pin</span>
-            <p class="why-title">Personalized Strategies</p>
-            <p class="why-sub">Customized for You</p>
+          <div class="eco-card">
+            <div class="eco-icon"><span class="material-symbols-outlined">trending_up</span></div>
+            <h4 class="eco-title">Equity</h4>
+            <p class="eco-desc">Strategic stock selection and institutional-grade research.</p>
           </div>
-          <div class="why-card">
-            <span class="material-symbols-outlined why-icon">visibility</span>
-            <p class="why-title">Transparent Guidance</p>
-            <p class="why-sub">No Hidden Agendas</p>
+          <div class="eco-card">
+            <div class="eco-icon"><span class="material-symbols-outlined">pie_chart</span></div>
+            <h4 class="eco-title">Mutual Funds</h4>
+            <p class="eco-desc">Direct plan portfolios curated for risk-adjusted returns.</p>
           </div>
-          <div class="why-card">
-            <span class="material-symbols-outlined why-icon">diamond</span>
-            <p class="why-title">Wealth Creation</p>
-            <p class="why-sub">Focus on Growth</p>
+          <div class="eco-card">
+            <div class="eco-icon"><span class="material-symbols-outlined">cases</span></div>
+            <h4 class="eco-title">Portfolio Mgmt</h4>
+            <p class="eco-desc">Discretionary and non-discretionary management (PMS).</p>
+          </div>
+          <div class="eco-card">
+            <div class="eco-icon"><span class="material-symbols-outlined">savings</span></div>
+            <h4 class="eco-title">Fixed Deposits</h4>
+            <p class="eco-desc">Secure returns beating bank benchmark interest rates.</p>
+          </div>
+          <div class="eco-card">
+            <div class="eco-icon"><span class="material-symbols-outlined">location_city</span></div>
+            <h4 class="eco-title">Real Estate</h4>
+            <p class="eco-desc">Premium property funds & commercial investments.</p>
+          </div>
+          <div class="eco-card">
+            <div class="eco-icon"><span class="material-symbols-outlined">lightbulb</span></div>
+            <h4 class="eco-title">Unlisted Shares</h4>
+            <p class="eco-desc">Early access to tomorrow's market giants.</p>
+          </div>
+          <div class="eco-card">
+            <div class="eco-icon"><span class="material-symbols-outlined">shield</span></div>
+            <h4 class="eco-title">Insurance</h4>
+            <p class="eco-desc">Extensive cover plans for every milestone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSURANCE -->
+    <section id="insurance" class="section insurance-section reveal dark-theme">
+      <div class="container">
+        <div class="insurance-header">
+          <div class="insurance-header-left">
+            <p class="section-kicker copper-text">RISK MITIGATION</p>
+            <h2 class="section-title text-white">Fortify Your Financial Future</h2>
+            <p class="body-text text-light-muted">Unpredictability demands preparation. Our insurance suite is designed to safeguard your wealth and your loved ones from the unexpected.</p>
+          </div>
+          <div class="insurance-header-right">
+            <div class="policy-badge">
+              <span class="pb-icon">P</span>
+              <div class="pb-text">
+                <span class="pb-small">OFFLINE PARTNER OF</span>
+                <span class="pb-large">Policybazaar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="insurance-grid">
+          <div class="ins-card">
+            <span class="material-symbols-outlined ins-icon">favorite</span>
+            <h4 class="ins-title">Health</h4>
+            <p class="ins-desc">Comprehensive medical covers for global protection.</p>
+          </div>
+          <div class="ins-card">
+            <span class="material-symbols-outlined ins-icon">verified_user</span>
+            <h4 class="ins-title">Term Life</h4>
+            <p class="ins-desc">Massive security at fraction premium structures.</p>
+          </div>
+          <div class="ins-card">
+            <span class="material-symbols-outlined ins-icon">directions_car</span>
+            <h4 class="ins-title">Car & Motor</h4>
+            <p class="ins-desc">Zero-depreciation and instant claim settlements.</p>
+          </div>
+          <div class="ins-card">
+            <span class="material-symbols-outlined ins-icon">corporate_fare</span>
+            <h4 class="ins-title">Corporate</h4>
+            <p class="ins-desc">Enterprise risk management & liability coverage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="section trust-section reveal bg-light">
+      <div class="container">
+        <p class="section-kicker text-center">CORE VALUES</p>
+        <h2 class="section-title text-center">The Benchmark of Financial Trust</h2>
+        
+        <div class="trust-flex">
+          <div class="trust-box">
+            <div class="trust-icon-wrap"><span class="material-symbols-outlined">schedule</span></div>
+            <h4 class="trust-box-title">12+ Years</h4>
+            <p class="trust-sub">PROVEN TRACK RECORD</p>
+          </div>
+          <div class="trust-box">
+            <div class="trust-icon-wrap"><span class="material-symbols-outlined">all_inclusive</span></div>
+            <h4 class="trust-box-title">Omni-Channel</h4>
+            <p class="trust-sub">UNIFIED PLATFORM</p>
+          </div>
+          <div class="trust-box">
+            <div class="trust-icon-wrap"><span class="material-symbols-outlined">tune</span></div>
+            <h4 class="trust-box-title">Bespoke</h4>
+            <p class="trust-sub">TAILORED TO YOU</p>
+          </div>
+          <div class="trust-box">
+            <div class="trust-icon-wrap"><span class="material-symbols-outlined">visibility</span></div>
+            <h4 class="trust-box-title">Crystal Clear</h4>
+            <p class="trust-sub">FULL TRANSPARENCY</p>
+          </div>
+          <div class="trust-box">
+            <div class="trust-icon-wrap"><span class="material-symbols-outlined">trending_up</span></div>
+            <h4 class="trust-box-title">Elite Growth</h4>
+            <p class="trust-sub">YIELD FOCUSED</p>
           </div>
         </div>
       </div>
@@ -258,97 +247,101 @@
     <!-- VIDEOS -->
     <section class="section videos-section reveal">
       <div class="container">
-        <div class="videos-header">
+        <div class="section-header-split">
           <div>
-            <h2 class="section-heading">Watch How We Help</h2>
-            <p class="body-text">Gain insights from our experts through video tutorials and testimonials.</p>
+            <p class="section-kicker">KNOWLEDGE HUB</p>
+            <h2 class="section-title">Master Your Finances</h2>
           </div>
-          <button class="view-more-btn">View More Videos <span class="material-symbols-outlined">arrow_forward</span></button>
+          <a href="#" class="view-all-link">VIEW ALL EPISODES <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
+
         <div class="videos-grid">
-
           <!-- Video 1 -->
-          <div class="video-card-new" onclick="openModal('Understanding Mutual Funds.mp4')">
-            <div class="video-thumb-wrap">
-              <img src="thumb_mutual_funds.png" alt="Understanding Mutual Funds thumbnail">
-              <div class="thumb-play-btn">
-                <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:48px;color:#fff;">play_circle</span>
+          <div class="video-card-premium" onclick="openModal('Understanding Mutual Funds.mp4')">
+            <div class="video-thumb">
+              <img src="thumb_mutual_funds.png" alt="Mutual Funds">
+              <div class="play-btn-wrap">
+                <span class="material-symbols-outlined">play_arrow</span>
               </div>
-              <div class="thumb-overlay"></div>
             </div>
-            <div class="video-info">
+            <div class="video-meta">
+              <span class="video-cat">INVESTMENT</span>
               <h4 class="video-title">Understanding Mutual Funds</h4>
-              <p class="video-desc">Learn the fundamentals of mutual fund investing and how it can help diversify your portfolio. Discover strategies to optimize your returns while managing risk effectively.</p>
+              <p class="video-desc">A deep dive into institutional fund selection and alpha generation.</p>
             </div>
           </div>
-
           <!-- Video 2 -->
-          <div class="video-card-new" onclick="openModal('Risk Management in 2024.mp4')">
-            <div class="video-thumb-wrap">
-              <img src="thumb_risk_management.png" alt="Risk Management in 2024 thumbnail">
-              <div class="thumb-play-btn">
-                <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:48px;color:#fff;">play_circle</span>
+          <div class="video-card-premium" onclick="openModal('Risk Management in 2024.mp4')">
+            <div class="video-thumb">
+              <img src="thumb_risk_management.png" alt="Risk Management">
+              <div class="play-btn-wrap">
+                <span class="material-symbols-outlined">play_arrow</span>
               </div>
-              <div class="thumb-overlay"></div>
             </div>
-            <div class="video-info">
-              <h4 class="video-title">Risk Management in 2024</h4>
-              <p class="video-desc">Explore essential techniques to protect and grow your investments in today's market. Learn how to balance risk and opportunity with smart financial strategies.</p>
+            <div class="video-meta">
+              <span class="video-cat">STRATEGY</span>
+              <h4 class="video-title">Risk Management In 2024</h4>
+              <p class="video-desc">How to hedge your portfolio against global macroeconomic volatility.</p>
             </div>
           </div>
-
           <!-- Video 3 -->
-          <div class="video-card-new" onclick="openModal('Why Insurance Matters.mp4')">
-            <div class="video-thumb-wrap">
-              <img src="thumb_insurance.png" alt="Why Insurance Matters thumbnail">
-              <div class="thumb-play-btn">
-                <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:48px;color:#fff;">play_circle</span>
+          <div class="video-card-premium" onclick="openModal('Why Insurance Matters.mp4')">
+            <div class="video-thumb">
+              <img src="thumb_insurance.png" alt="Insurance">
+              <div class="play-btn-wrap">
+                <span class="material-symbols-outlined">play_arrow</span>
               </div>
-              <div class="thumb-overlay"></div>
             </div>
-            <div class="video-info">
+            <div class="video-meta">
+              <span class="video-cat">SECURITY</span>
               <h4 class="video-title">Why Insurance Matters</h4>
-              <p class="video-desc">Understand the critical role insurance plays in securing your financial future. Learn how to choose the right policies to protect your assets and family.</p>
+              <p class="video-desc">Protecting generational wealth from unforeseen life events.</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact-section reveal">
-      <div class="container contact-grid">
-        <div class="contact-info">
-          <h2 class="section-heading white">Ready to Grow Your Wealth?</h2>
-          <p class="body-text white-muted">Book a private consultation with our senior advisors and let's craft your journey to financial independence.</p>
-          <div class="contact-details">
-            <div class="contact-row">
-              <span class="material-symbols-outlined contact-icon">call</span>
-              <div>
-                <p class="contact-label">Phone</p>
-                <p class="contact-value">+91 98765 43210</p>
-              </div>
+    <section id="contact" class="section contact-section reveal dark-theme">
+      <div class="container contact-grid-premium">
+        <div class="contact-left">
+          <h2 class="section-title text-white">Ready to Sculpt Your Financial <span class="accent-text">Future?</span></h2>
+          <p class="body-text text-light-muted">Connect with our senior consultants and set in motion your bespoke institutional-grade wealth management.</p>
+          
+          <div class="contact-methods">
+            <div class="cm-item">
+              <span class="cm-label">PHONE</span>
+              <span class="cm-val">+91 98765 43210</span>
             </div>
-            <div class="contact-row">
-              <span class="material-symbols-outlined contact-icon">mail</span>
-              <div>
-                <p class="contact-label">Email</p>
-                <p class="contact-value">contact@onestopfinance.com</p>
-              </div>
+            <div class="cm-item">
+              <span class="cm-label">EMAIL</span>
+              <span class="cm-val">contact@onestopfinance.com</span>
             </div>
-            <div class="contact-row">
-              <span class="material-symbols-outlined contact-icon">location_on</span>
-              <div>
-                <p class="contact-label">Head Office</p>
-                <p class="contact-value">Financial District, Sector 44, Gurgaon, India</p>
-              </div>
+            <div class="cm-item">
+              <span class="cm-label">HEAD OFFICE</span>
+              <span class="cm-val">12th Floor, Financial District, Gurugram</span>
             </div>
           </div>
-          <button class="btn-cta">Get Free Consultation</button>
         </div>
-        <div class="contact-map">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSQ4h3EuTPwYb1R9AqVGCALDlcIEK2M6hKHPVGxZrqSSKlAitZGHyFgBYJrNZoY3tDSKbO_uYiJYUFNE3cnoXgHhGVQbLIDsGfEr422wD0_ZzJ8C1-be9VtB9BmvYip6VljXJQPJzYVWBi3cPHJdK7stZiE2U-7LndAW6L7mLXtE-CkLU9W3ID_Ns_DUbMvTHOpvPZo6TkA13UTwLZSaswaTPFJPzGm1u89Vc88B9c48hFKmWCa1NLfNUjcIzdFurZeVKB7odq_qs" alt="Map of Gurgaon financial district office location">
+        
+        <div class="contact-right">
+          <form class="premium-form" onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
+            <h3 class="form-title">Request a Callback</h3>
+            <div class="form-group">
+              <label>FULL NAME</label>
+              <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label>EMAIL ADDRESS</label>
+              <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label>MESSAGE (OPTIONAL)</label>
+              <textarea placeholder="How can we help you?" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-100">GET FREE CONSULTATION</button>
+          </form>
         </div>
       </div>
     </section>
@@ -356,18 +349,36 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-brand">One Stop Financial Solution</span>
-      <div class="footer-links">
-        <a href="#home" class="footer-link">Home</a>
-        <a href="#about" class="footer-link">About</a>
-        <a href="#services" class="footer-link">Services</a>
-        <a href="#contact" class="footer-link">Contact</a>
-        <a href="#" class="footer-link">Privacy Policy</a>
-        <a href="#" class="footer-link">Terms of Service</a>
+  <footer class="premium-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="brand">
+          <span class="brand-title">One Stop Financial</span>
+          <span class="brand-sub">Solution</span>
+        </div>
+        <p class="footer-desc">Empowering HNIs and institutions with tailored, high-frequency strategies and meticulous financial planning since 2012.</p>
+        <div class="social-links">
+          <a href="#"><span class="material-symbols-outlined">link</span></a>
+          <a href="#"><span class="material-symbols-outlined">flutter_dash</span></a>
+          <a href="#"><span class="material-symbols-outlined">language</span></a>
+        </div>
       </div>
-      <p class="footer-copy">© 2024 One Stop Financial Solution. All Investment &amp; Insurance Solutions Under One Roof.</p>
+      <div class="footer-col">
+        <h4 class="footer-heading">COMPANY</h4>
+        <a href="#about">About Our Firm</a>
+        <a href="#ecosystem">Services</a>
+        <a href="#insurance">Insurance</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">LEGAL</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Regulatory Disclosures</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2024 One Stop Financial Solution. All rights reserved. SEBI Registered Investment Advisor.</p>
     </div>
   </footer>
 
@@ -380,14 +391,6 @@
       <video id="modalVideo" controls playsinline></video>
     </div>
   </div>
-
-  <!-- Floating WhatsApp Button -->
-  <a id="wa-btn" href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M16 0C7.164 0 0 7.163 0 16c0 2.824.738 5.478 2.027 7.784L0 32l8.456-2.007A15.934 15.934 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.29 13.29 0 01-6.789-1.858l-.487-.289-5.02 1.193 1.241-4.89-.318-.502A13.266 13.266 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.28-9.907c-.4-.2-2.365-1.165-2.731-1.298-.366-.133-.632-.2-.898.2-.266.4-1.032 1.298-1.265 1.564-.233.266-.466.3-.866.1-.4-.2-1.688-.623-3.215-1.982-1.188-1.059-1.99-2.367-2.223-2.767-.233-.4-.025-.616.175-.815.18-.179.4-.466.6-.7.2-.233.266-.4.4-.666.133-.267.066-.5-.033-.7-.1-.2-.899-2.165-1.232-2.964-.324-.778-.654-.673-.898-.686l-.765-.013c-.266 0-.7.1-1.066.5-.366.4-1.4 1.366-1.4 3.332 0 1.965 1.432 3.864 1.632 4.13.2.267 2.82 4.302 6.83 6.031.955.412 1.7.658 2.281.842.958.305 1.83.262 2.52.159.769-.114 2.365-.966 2.697-1.9.332-.932.332-1.731.233-1.898-.1-.167-.366-.267-.766-.467z"/>
-    </svg>
-    <span class="wa-tooltip">Chat with us!</span>
-  </a>
 
   <script src="script.js"></script>
 </body>
