@@ -49,16 +49,15 @@ tailwind.config = {
         sm: "12px"
       },
       fontFamily: {
-        display: ["Playfair Display", "serif"],
-        sans: ["Inter", "sans-serif"]
+        display: ["Poppins", "sans-serif"],
+        sans: ["Poppins", "sans-serif"]
       }
     }
   }
 };
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
 .material-symbols-outlined {
@@ -81,10 +80,10 @@ tailwind.config = {
             box-shadow: 0 16px 32px rgba(0, 0, 0, 0.07);
         }
         .hero-mask {
-            background: linear-gradient(to right, rgba(0, 6, 19, 0.95) 0%, rgba(0, 6, 19, 0.6) 50%, rgba(0, 6, 19, 0.2) 100%);
+            background: linear-gradient(to right, rgba(0, 6, 19, 0.98) 0%, rgba(0, 6, 19, 0.82) 52%, rgba(0, 6, 19, 0.56) 100%);
         }
         .tracking-tighter-text {
-            letter-spacing: -0.04em;
+            letter-spacing: 0;
         }
         .section-vertical-spacing {
             padding-top: clamp(56px, 7vw, 88px);
@@ -195,6 +194,7 @@ tailwind.config = {
 <section id="home" class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-primary">
 <div class="absolute inset-0 z-0">
 <img alt="Financial advisor presenting data to clients in a modern office" class="w-full h-full object-cover scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA8HnmyxyIJjif_hiO3W1eRCZwJ0nbxvEuPWhUMlJlqvG6hkpxtrLvZg-2xB-wXGWRSjv_cu2WkZKIDXRFFDQG00624BLthlKuTztDvGAIPeTBTGveJgc9trxFofK1fsNFofoPTYDEZvxlSGFn-w6pNLaHK0RUVQcJrTYsmkSv4i9Z2gQ2HFR45mJv52HO-8mv46LRNnPTxO3ydwse7qHUOZaNn2y02LcHJDQSe4BcdOJVvRDLWK6xla5bCWYvBTfklL29FGcIevs"/>
+<div class="absolute inset-0 bg-primary/35"></div>
 <div class="absolute inset-0 hero-mask"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
 </div>
